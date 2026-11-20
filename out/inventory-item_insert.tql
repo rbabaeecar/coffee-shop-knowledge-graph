@@ -1,0 +1,19 @@
+insert
+$_ isa inventory-item, has inventory-item-id "ING001", has name "Espresso beans", has pack-size 1000.0, has unit "grams", has pack-price 12.0, has packs-in-stock 4.0;
+$_ isa inventory-item, has inventory-item-id "ING002", has name "Whole Milk", has pack-size 1000.0, has unit "ml", has pack-price 1.2, has packs-in-stock 55.0;
+$_ isa inventory-item, has inventory-item-id "ING003", has name "Cheddar", has pack-size 500.0, has unit "grams", has pack-price 7.45, has packs-in-stock 1.0;
+$_ isa inventory-item, has inventory-item-id "ING004", has name "Mozzarella", has pack-size 500.0, has unit "grams", has pack-price 5.0, has packs-in-stock 4.0;
+$_ isa inventory-item, has inventory-item-id "ING005", has name "Whipped cream", has pack-size 300.0, has unit "ml", has pack-price 1.35, has packs-in-stock 7.0;
+$_ isa inventory-item, has inventory-item-id "ING006", has name "Vanilla syrup", has pack-size 1000.0, has unit "ml", has pack-price 14.52, has packs-in-stock 3.0;
+$_ isa inventory-item, has inventory-item-id "ING007", has name "Barista chocolate syrup", has pack-size 1000.0, has unit "ml", has pack-price 8.49, has packs-in-stock 3.0;
+$_ isa inventory-item, has inventory-item-id "ING008", has name "Barista white chocolate syrup", has pack-size 1000.0, has unit "ml", has pack-price 8.49, has packs-in-stock 4.0;
+$_ isa inventory-item, has inventory-item-id "ING009", has name "Barista caramel sauce", has pack-size 1000.0, has unit "ml", has pack-price 8.49, has packs-in-stock 1.0;
+$_ isa inventory-item, has inventory-item-id "ING010", has name "Sugar", has pack-size 1000.0, has unit "grams", has pack-price 1.5, has packs-in-stock 4.0;
+$_ isa inventory-item, has inventory-item-id "ING011", has name "Panini Bread", has pack-size 4.0, has unit "units", has pack-price 1.35, has packs-in-stock 20.0;
+$_ isa inventory-item, has inventory-item-id "ING012", has name "Cocoa powder", has pack-size 1000.0, has unit "grams", has pack-price 22.0, has packs-in-stock 5.0;
+$_ isa inventory-item, has inventory-item-id "ING013", has name "Chocolate", has pack-size 1000.0, has unit "grams", has pack-price 10.5, has packs-in-stock 2.0;
+$_ isa inventory-item, has inventory-item-id "ING014", has name "Lemons", has pack-size 5.0, has unit "units", has pack-price 1.5, has packs-in-stock 10.0;
+$_ isa inventory-item, has inventory-item-id "ING015", has name "Ham", has pack-size 1000.0, has unit "grams", has pack-price 27.5, has packs-in-stock 3.0;
+$_ isa inventory-item, has inventory-item-id "ING016", has name "Salami", has pack-size 1000.0, has unit "grams", has pack-price 15.49, has packs-in-stock 2.0;
+$_ isa inventory-item, has inventory-item-id "ING017", has name "Black Tea", has pack-size 1000.0, has unit "grams", has pack-price 16.0, has packs-in-stock 2.0;
+$_ isa inventory-item, has inventory-item-id "ING018", has name "Vanilla extract", has pack-size 60.0, has unit "ml", has pack-price 9.99, has packs-in-stock 2.0;

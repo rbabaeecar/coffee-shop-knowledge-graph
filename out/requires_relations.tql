@@ -1,0 +1,426 @@
+match
+  $product isa menu-item, has sku "HDR-CAP-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING001";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 8.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-CAP-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING002";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 130.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-CAP-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING001";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 10.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-CAP-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING002";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 180.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-LAT-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING001";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 8.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-LAT-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING002";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 130.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-LAT-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING001";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 10.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-LAT-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING002";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 180.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-FLT";
+  $ingredient isa inventory-item, has inventory-item-id "ING001";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 8.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-FLT";
+  $ingredient isa inventory-item, has inventory-item-id "ING002";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 160.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-CRM-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING001";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 8.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-CRM-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING002";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 120.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-CRM-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING009";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 20.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-CRM-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING001";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 10.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-CRM-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING002";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 160.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-CRM-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING009";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 30.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-ESP";
+  $ingredient isa inventory-item, has inventory-item-id "ING001";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 8.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-MOC-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING001";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 8.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-MOC-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING002";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 120.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-MOC-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING007";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 20.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-MOC-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING001";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 10.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-MOC-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING002";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 160.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-MOC-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING007";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 30.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-WMO-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING001";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 8.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-WMO-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING002";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 120.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-WMO-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING008";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 20.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-WMO-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING001";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 10.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-WMO-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING002";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 160.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-WMO-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING008";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 30.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-HCH-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING002";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 130.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-HCH-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING012";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 25.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-HCH-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING013";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 20.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-HCH-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING005";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 30.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-HCH-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING002";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 180.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-HCH-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING012";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 35.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-HCH-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING013";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 30.0;
+end;
+
+match
+  $product isa menu-item, has sku "HDR-HCH-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING005";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 40.0;
+end;
+
+match
+  $product isa menu-item, has sku "CDR-CCF-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING001";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 8.0;
+end;
+
+match
+  $product isa menu-item, has sku "CDR-CCF-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING002";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 130.0;
+end;
+
+match
+  $product isa menu-item, has sku "CDR-CCF-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING001";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 10.0;
+end;
+
+match
+  $product isa menu-item, has sku "CDR-CCF-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING002";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 180.0;
+end;
+
+match
+  $product isa menu-item, has sku "CDR-CMO-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING001";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 8.0;
+end;
+
+match
+  $product isa menu-item, has sku "CDR-CMO-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING002";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 120.0;
+end;
+
+match
+  $product isa menu-item, has sku "CDR-CMO-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING007";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 20.0;
+end;
+
+match
+  $product isa menu-item, has sku "CDR-CMO-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING001";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 10.0;
+end;
+
+match
+  $product isa menu-item, has sku "CDR-CMO-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING002";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 160.0;
+end;
+
+match
+  $product isa menu-item, has sku "CDR-CMO-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING007";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 30.0;
+end;
+
+match
+  $product isa menu-item, has sku "CDR-ICT-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING017";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 10.0;
+end;
+
+match
+  $product isa menu-item, has sku "CDR-ICT-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING010";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 20.0;
+end;
+
+match
+  $product isa menu-item, has sku "CDR-ICT-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING016";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 15.0;
+end;
+
+match
+  $product isa menu-item, has sku "CDR-ICT-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING010";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 25.0;
+end;
+
+match
+  $product isa menu-item, has sku "CDR-LMN-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING014";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 1.0;
+end;
+
+match
+  $product isa menu-item, has sku "CDR-LMN-MD";
+  $ingredient isa inventory-item, has inventory-item-id "ING010";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 30.0;
+end;
+
+match
+  $product isa menu-item, has sku "CDR-LMN-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING014";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 1.0;
+end;
+
+match
+  $product isa menu-item, has sku "CDR-LMN-LG";
+  $ingredient isa inventory-item, has inventory-item-id "ING010";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 40.0;
+end;
+
+match
+  $product isa menu-item, has sku "SNK-SHC";
+  $ingredient isa inventory-item, has inventory-item-id "ING011";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 1.0;
+end;
+
+match
+  $product isa menu-item, has sku "SNK-SHC";
+  $ingredient isa inventory-item, has inventory-item-id "ING015";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 50.0;
+end;
+
+match
+  $product isa menu-item, has sku "SNK-SHC";
+  $ingredient isa inventory-item, has inventory-item-id "ING003";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 20.0;
+end;
+
+match
+  $product isa menu-item, has sku "SNK-SSM";
+  $ingredient isa inventory-item, has inventory-item-id "ING011";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 1.0;
+end;
+
+match
+  $product isa menu-item, has sku "SNK-SSM";
+  $ingredient isa inventory-item, has inventory-item-id "ING016";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 50.0;
+end;
+
+match
+  $product isa menu-item, has sku "SNK-SSM";
+  $ingredient isa inventory-item, has inventory-item-id "ING004";
+insert
+  requires (product: $product, ingredient: $ingredient), has amount 20.0;
+end;

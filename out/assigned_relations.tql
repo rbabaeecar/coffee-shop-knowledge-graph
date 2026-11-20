@@ -1,0 +1,125 @@
+match
+  $staff isa staff, has staff-id "ST001";
+  $shift isa shift, has shift-id "SH001";
+insert
+  assigned (staff: $staff, shift: $shift), has work-date 2024-02-12;
+end;
+
+match
+  $staff isa staff, has staff-id "ST003";
+  $shift isa shift, has shift-id "SH001";
+insert
+  assigned (staff: $staff, shift: $shift), has work-date 2024-02-12;
+end;
+
+match
+  $staff isa staff, has staff-id "ST001";
+  $shift isa shift, has shift-id "SH002";
+insert
+  assigned (staff: $staff, shift: $shift), has work-date 2024-02-12;
+end;
+
+match
+  $staff isa staff, has staff-id "ST002";
+  $shift isa shift, has shift-id "SH003";
+insert
+  assigned (staff: $staff, shift: $shift), has work-date 2024-02-13;
+end;
+
+match
+  $staff isa staff, has staff-id "ST004";
+  $shift isa shift, has shift-id "SH003";
+insert
+  assigned (staff: $staff, shift: $shift), has work-date 2024-02-13;
+end;
+
+match
+  $staff isa staff, has staff-id "ST002";
+  $shift isa shift, has shift-id "SH004";
+insert
+  assigned (staff: $staff, shift: $shift), has work-date 2024-02-13;
+end;
+
+match
+  $staff isa staff, has staff-id "ST001";
+  $shift isa shift, has shift-id "SH005";
+insert
+  assigned (staff: $staff, shift: $shift), has work-date 2024-02-14;
+end;
+
+match
+  $staff isa staff, has staff-id "ST003";
+  $shift isa shift, has shift-id "SH005";
+insert
+  assigned (staff: $staff, shift: $shift), has work-date 2024-02-14;
+end;
+
+match
+  $staff isa staff, has staff-id "ST003";
+  $shift isa shift, has shift-id "SH006";
+insert
+  assigned (staff: $staff, shift: $shift), has work-date 2024-02-14;
+end;
+
+match
+  $staff isa staff, has staff-id "ST002";
+  $shift isa shift, has shift-id "SH007";
+insert
+  assigned (staff: $staff, shift: $shift), has work-date 2024-02-15;
+end;
+
+match
+  $staff isa staff, has staff-id "ST004";
+  $shift isa shift, has shift-id "SH007";
+insert
+  assigned (staff: $staff, shift: $shift), has work-date 2024-02-15;
+end;
+
+match
+  $staff isa staff, has staff-id "ST004";
+  $shift isa shift, has shift-id "SH008";
+insert
+  assigned (staff: $staff, shift: $shift), has work-date 2024-02-15;
+end;
+
+match
+  $staff isa staff, has staff-id "ST001";
+  $shift isa shift, has shift-id "SH009";
+insert
+  assigned (staff: $staff, shift: $shift), has work-date 2024-02-16;
+end;
+
+match
+  $staff isa staff, has staff-id "ST002";
+  $shift isa shift, has shift-id "SH009";
+insert
+  assigned (staff: $staff, shift: $shift), has work-date 2024-02-16;
+end;
+
+match
+  $staff isa staff, has staff-id "ST002";
+  $shift isa shift, has shift-id "SH010";
+insert
+  assigned (staff: $staff, shift: $shift), has work-date 2024-02-16;
+end;
+
+match
+  $staff isa staff, has staff-id "ST003";
+  $shift isa shift, has shift-id "SH011";
+insert
+  assigned (staff: $staff, shift: $shift), has work-date 2024-02-17;
+end;
+
+match
+  $staff isa staff, has staff-id "ST004";
+  $shift isa shift, has shift-id "SH011";
+insert
+  assigned (staff: $staff, shift: $shift), has work-date 2024-02-17;
+end;
+
+match
+  $staff isa staff, has staff-id "ST004";
+  $shift isa shift, has shift-id "SH012";
+insert
+  assigned (staff: $staff, shift: $shift), has work-date 2024-02-17;
+end;

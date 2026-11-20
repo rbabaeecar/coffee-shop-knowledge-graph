@@ -1,0 +1,13 @@
+insert
+$_ isa shift, has shift-id "SH001", has day-of-week "Monday", has start-time "07:00:00", has end-time "13:00:00";
+$_ isa shift, has shift-id "SH002", has day-of-week "Monday", has start-time "13:00:00", has end-time "17:00:00";
+$_ isa shift, has shift-id "SH003", has day-of-week "Tuesday", has start-time "07:00:00", has end-time "13:00:00";
+$_ isa shift, has shift-id "SH004", has day-of-week "Tuesday", has start-time "13:00:00", has end-time "17:00:00";
+$_ isa shift, has shift-id "SH005", has day-of-week "Wednesday", has start-time "07:00:00", has end-time "13:00:00";
+$_ isa shift, has shift-id "SH006", has day-of-week "Wednesday", has start-time "13:00:00", has end-time "17:00:00";
+$_ isa shift, has shift-id "SH007", has day-of-week "Thursday", has start-time "07:00:00", has end-time "13:00:00";
+$_ isa shift, has shift-id "SH008", has day-of-week "Thursday", has start-time "13:00:00", has end-time "17:00:00";
+$_ isa shift, has shift-id "SH009", has day-of-week "Friday", has start-time "07:00:00", has end-time "13:00:00";
+$_ isa shift, has shift-id "SH010", has day-of-week "Friday", has start-time "13:00:00", has end-time "17:00:00";
+$_ isa shift, has shift-id "SH011", has day-of-week "Saturday", has start-time "07:00:00", has end-time "13:00:00";
+$_ isa shift, has shift-id "SH012", has day-of-week "Saturday", has start-time "13:00:00", has end-time "17:00:00";

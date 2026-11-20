@@ -1,0 +1,25 @@
+insert
+$_ isa menu-item, has item-id "It001", has sku "HDR-CAP-MD", has name "Cappuccino", has category "Hot Drinks", has size "Medium", has price 3.45;
+$_ isa menu-item, has item-id "It002", has sku "HDR-CAP-LG", has name "Cappuccino", has category "Hot Drinks", has size "Large", has price 3.75;
+$_ isa menu-item, has item-id "It003", has sku "HDR-LAT-MD", has name "Latte", has category "Hot Drinks", has size "Medium", has price 3.45;
+$_ isa menu-item, has item-id "It004", has sku "HDR-LAT-LG", has name "Latte", has category "Hot Drinks", has size "Large", has price 3.75;
+$_ isa menu-item, has item-id "It005", has sku "HDR-FLT", has name "Flat White", has category "Hot Drinks", has size "N/A", has price 3.15;
+$_ isa menu-item, has item-id "It006", has sku "HDR-CRM-MD", has name "Caramel Macchiato", has category "Hot Drinks", has size "Medium", has price 4.2;
+$_ isa menu-item, has item-id "It007", has sku "HDR-CRM-LG", has name "Caramel Macchiato", has category "Hot Drinks", has size "Large", has price 4.6;
+$_ isa menu-item, has item-id "It008", has sku "HDR-ESP", has name "Espresso", has category "Hot Drinks", has size "N/A", has price 2.15;
+$_ isa menu-item, has item-id "It009", has sku "HDR-MOC-MD", has name "Mocha", has category "Hot Drinks", has size "Medium", has price 4.0;
+$_ isa menu-item, has item-id "It010", has sku "HDR-MOC-LG", has name "Mocha", has category "Hot Drinks", has size "Large", has price 4.6;
+$_ isa menu-item, has item-id "It011", has sku "HDR-WMO-MD", has name "White Mocha", has category "Hot Drinks", has size "Medium", has price 4.5;
+$_ isa menu-item, has item-id "It012", has sku "HDR-WMO-LG", has name "White Mocha", has category "Hot Drinks", has size "Large", has price 4.7;
+$_ isa menu-item, has item-id "It013", has sku "HDR-HCH-MD", has name "Hot Chocolate", has category "Hot Drinks", has size "Medium", has price 4.2;
+$_ isa menu-item, has item-id "It014", has sku "HDR-HCH-LG", has name "Hot Chocolate", has category "Hot Drinks", has size "Large", has price 4.6;
+$_ isa menu-item, has item-id "It015", has sku "CDR-CCF-MD", has name "Cold Coffee", has category "Cold Drinks", has size "Medium", has price 3.45;
+$_ isa menu-item, has item-id "It016", has sku "CDR-CCF-LG", has name "Cold Coffee", has category "Cold Drinks", has size "Large", has price 3.75;
+$_ isa menu-item, has item-id "It017", has sku "CDR-CMO-MD", has name "Cold Mocha", has category "Cold Drinks", has size "Medium", has price 4.0;
+$_ isa menu-item, has item-id "It018", has sku "CDR-CMO-LG", has name "Cold Mocha", has category "Cold Drinks", has size "Large", has price 4.6;
+$_ isa menu-item, has item-id "It019", has sku "CDR-ICT-MD", has name "Iced Tea", has category "Cold Drinks", has size "Medium", has price 3.25;
+$_ isa menu-item, has item-id "It020", has sku "CDR-ICT-LG", has name "Iced Tea", has category "Cold Drinks", has size "Large", has price 3.55;
+$_ isa menu-item, has item-id "It021", has sku "CDR-LMN-MD", has name "Lemonade", has category "Cold Drinks", has size "Medium", has price 3.35;
+$_ isa menu-item, has item-id "It022", has sku "CDR-LMN-LG", has name "Lemonade", has category "Cold Drinks", has size "Large", has price 3.75;
+$_ isa menu-item, has item-id "It023", has sku "SNK-SHC", has name "Sandwich Ham&Cheese", has category "Snacks", has size "N/A", has price 5.6;
+$_ isa menu-item, has item-id "It024", has sku "SNK-SSM", has name "Sandwich Salami&Mozzarella", has category "Snacks", has size "N/A", has price 5.5;

@@ -1,0 +1,132 @@
+# Coffee-shop knowledge graph — TypeDB 3.x schema
+# Source of truth: specs/00-foundation.md (Spec 00 — Foundation)
+#
+# Design principles (spec §3):
+#   D1  No foreign-key attributes — joins are relations.
+#   D2  Quantities describing a connection live on the relation.
+#   D3  One entity instance per real-world thing (one order per order-id).
+#       A recipe is not an entity: it is the set of `requires` relations
+#       of one menu item.
+#   D4  Singular names, no _pk/_fk suffixes; identities are @key.
+#   D5  CSV line-level rows become relation instances (requires, contains);
+#       duplicate (order, item) lines merge into one contains.
+#   D8  Shift times stored as zero-padded "HH:MM:SS" strings.
+
+define
+
+# ==========================================================
+# ATTRIBUTES (spec §3.3)
+# ==========================================================
+
+# --- identities ---
+attribute inventory-item-id, value string;
+attribute item-id, value string;
+attribute order-id, value string;
+attribute staff-id, value string;
+attribute shift-id, value string;
+
+# --- shared descriptive ---
+attribute name, value string;            # inventory-item + menu-item
+
+# --- inventory-item ---
+attribute pack-size, value double;       # was ing_weight (amount per pack)
+attribute unit, value string;            # grams | ml | units
+attribute pack-price, value double;      # was ing_price (price per pack)
+attribute packs-in-stock, value double;  # was quantity
+
+# --- menu-item ---
+attribute sku, value string;
+attribute category, value string;
+attribute size, value string;
+attribute price, value double;           # selling price
+
+# --- order ---
+attribute created-at, value datetime;
+attribute customer-name, value string;   # see template note T2
+attribute channel, value string;         # "in" | "out" (was in_or_out)
+
+# --- staff ---
+attribute first-name, value string;
+attribute last-name, value string;
+attribute position, value string;
+attribute hourly-wage, value double;
+
+# --- shift ---
+attribute day-of-week, value string;
+attribute start-time, value string;      # D8: "07:00:00"
+attribute end-time, value string;        # D8: "13:00:00"
+
+# --- relation-owned (D2) ---
+attribute amount, value double;          # requires: per serving, in the inventory item's unit
+attribute line-quantity, value integer;  # contains: was item_quantity
+attribute work-date, value date;         # assigned: was rota.date (date only)
+
+# ==========================================================
+# ENTITIES (spec §3.1)
+# ==========================================================
+
+entity inventory-item,
+  owns inventory-item-id @key,
+  owns name,
+  owns pack-size,
+  owns unit,
+  owns pack-price,
+  owns packs-in-stock,
+  plays requires:ingredient;
+
+entity menu-item,
+  owns item-id @key,                     # e.g. "It001"
+  owns sku,                              # = recipes.csv recipe_id (load-time join)
+  owns name,
+  owns category,
+  owns size,
+  owns price,
+  plays requires:product,
+  plays contains:item;
+
+entity order,
+  owns order-id @key,                    # e.g. "ORD001"
+  owns created-at,
+  owns customer-name,
+  owns channel,
+  plays contains:order;
+
+entity staff,
+  owns staff-id @key,
+  owns first-name,
+  owns last-name,
+  owns position,
+  owns hourly-wage,
+  plays assigned:staff;
+
+entity shift,
+  owns shift-id @key,
+  owns day-of-week,
+  owns start-time,
+  owns end-time,
+  plays assigned:shift;
+
+# ==========================================================
+# RELATIONS (spec §3.2)
+# ==========================================================
+
+# recipe line: a menu item requires an inventory item as an ingredient
+# (replaces the recipe entity + used/made relations) — one per recipe CSV
+# line (D5). A menu item's full recipe = all its `requires` instances.
+relation requires,
+  relates product,
+  relates ingredient,
+  owns amount;
+
+# order line (was: included) — one per distinct (order, menu-item) pair;
+# line-quantity sums repeated CSV lines for the same item (D5)
+relation contains,
+  relates order,
+  relates item,
+  owns line-quantity;
+
+# rota entry: staff works a shift on a date (replaces rota join table)
+relation assigned,
+  relates staff,
+  relates shift,
+  owns work-date;

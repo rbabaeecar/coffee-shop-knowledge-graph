@@ -1,0 +1,30 @@
+# OS / editor
+.DS_Store
+
+# Source data (download from Kaggle, see README)
+data/
+archive/
+archive.zip
+
+# Local tooling and notes
+.python-version
+CLAUDE.md
+TODO.txt
+config.yaml
+config-singleton.yaml
+
+# Previous model (historical only)
+schema-old.tql
+schema-old-graph-view.png
+
+# Scripts folder is tracked empty
+scripts/*
+!scripts/.gitkeep
+
+# Generated TQL from the previous schema (do not load)
+out/inventory_insert.tql
+out/people_insert.tql
+out/recipes_insert.tql
+out/used_relations.tql
+out/made_relations.tql
+out/included_relations.tql

@@ -1,0 +1,5 @@
+insert
+$_ isa staff, has staff-id "ST001", has first-name "Emma", has last-name "Johnson", has position "Barista", has hourly-wage 10.0;
+$_ isa staff, has staff-id "ST002", has first-name "Liam", has last-name "Smith", has position "Barista", has hourly-wage 10.0;
+$_ isa staff, has staff-id "ST003", has first-name "Olivia", has last-name "Williams", has position "Barista", has hourly-wage 10.0;
+$_ isa staff, has staff-id "ST004", has first-name "Noah", has last-name "Brown", has position "Barista", has hourly-wage 10.0;
