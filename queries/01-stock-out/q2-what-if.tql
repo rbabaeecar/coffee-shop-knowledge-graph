@@ -1,0 +1,47 @@
+# Spec 01 — Q2 What-if view (specs/01-stock-out.md §4)
+#
+# Assume one inventory item's stock hits zero. List every menu item that
+# becomes unsellable (every product that requires it), with the units sold
+# and revenue over the 6-day window. Also return the totals: the number of
+# unsellable items, the menu size, and the total revenue exposure (D1.2).
+# Requires functions/01-stock-out.tql. Run in a READ transaction.
+#
+# PARAMETER: inventory-item-id. Change only the literal on the line
+#            marked "<-- ingredient", e.g. "ING001".
+
+match
+  $i isa inventory-item, has inventory-item-id "ING001",     # <-- ingredient
+     has name $ingredient;
+fetch {
+  "ingredient": $ingredient,
+  "unsellable-items": [
+    match
+      requires (product: $m, ingredient: $i);
+      $m has name $item, has size $size;
+      let $revenue = item_revenue($m);
+    sort $revenue desc;
+    fetch {
+      "item": $item,
+      "size": $size,
+      "units-sold": (
+        match contains (order: $o, item: $m), has line-quantity $q;
+        return sum($q);
+      ),
+      "revenue": $revenue,
+    };
+  ],
+  "unsellable-count": (
+    match requires (product: $m, ingredient: $i);
+    return count($m);
+  ),
+  "menu-size": (
+    match $all isa menu-item;
+    return count($all);
+  ),
+  "total-revenue-exposure": (
+    match
+      requires (product: $m, ingredient: $i);
+      let $revenue = item_revenue($m);
+    return sum($revenue);
+  ),
+};
