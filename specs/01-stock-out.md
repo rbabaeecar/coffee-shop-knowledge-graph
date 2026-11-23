@@ -1,6 +1,10 @@
 # Spec 01 — Stock-Out Impact Tracing
 
 **Status:** APPROVED 2026-09-01 (D1.1 and D1.2 explicitly verified)
+**Revised:** 2026-11-23 — D1.1 demo default raised 20 → 50 servings (the
+lowest coverage in the data is 25 servings, so 20 returned no rows);
+`servings_supported` returns the raw ratio, not floored (comment corrected).
+Both explicitly approved by the user.
 **Depends on:** `00-foundation.md` (schema §3, conventions C1–C4)
 
 ## 1. Business question
@@ -28,7 +32,8 @@ None. Uses the foundation schema unchanged.
 
 - **D1.1 — "At risk" is parameterized, not stored.** The data has no
   reorder-level column, so the alert threshold *N* (servings coverage) is a
-  function argument, defaulting to **20 servings** in the demo. (Template
+  function argument, defaulting to **50 servings** in the demo (was 20;
+  revised 2026-11-23 because no item falls below 20). (Template
   note T1.1: clients with reorder levels store them as an `inventory-item`
   attribute and the function reads it instead.)
 - **D1.2 — Revenue exposure window = the full 6 trading days** (convention
@@ -47,7 +52,7 @@ fun stock_units($i: inventory-item) -> double:
   return first $u;
 
 # How many servings of one menu item the current stock of ONE of its
-# ingredients supports: floor(stock_units / amount-per-serving).
+# ingredients supports: stock_units / amount-per-serving (raw, not floored).
 fun servings_supported($i: inventory-item, $m: menu-item) -> double:
   match
     requires (product: $m, ingredient: $i), has amount $a;
@@ -76,7 +81,7 @@ validated at implementation time — acceptance criterion A3.)*
 
 ## 4. Queries
 
-**Q1 — Alert view** (parameter: threshold `N`, default 20):
+**Q1 — Alert view** (parameter: threshold `N`, default 50):
 match every menu-item where `max_servable($m) < N`; return item name, size,
 coverage (servings), `item_revenue($m)`, and the limiting ingredient(s) —
 those with `servings_supported($i, $m) = max_servable($m)`. Sort by revenue
@@ -103,16 +108,24 @@ knowledge", not query output.
 
 ## 6. Acceptance criteria
 
-- [ ] A1: Q1 and Q2 are each answered by **one** TypeQL query invoking the
+*(All passed 2026-11-23 on TypeDB 3.13. Implementation:
+`functions/01-stock-out.tql`, `queries/01-stock-out/`. The A5 write-up is
+kept locally and is not tracked in git.)*
+
+- [x] A1: Q1 and Q2 are each answered by **one** TypeQL query invoking the
       §3 functions (no client-side joins or post-processing beyond sorting).
-- [ ] A2: Q1's threshold and Q2's ingredient are the only parameters; changing
+      *(Q2 is a single `fetch` that also returns its totals and the menu size.)*
+- [x] A2: Q1's threshold and Q2's ingredient are the only parameters; changing
       them requires no query edits beyond the value.
-- [ ] A3: functions compile against the foundation schema in TypeDB 3.x.
-- [ ] A4: unit math follows C1 exactly (packs × pack-size vs. `requires` amount) —
+      *(Tested at N = 20, 50, 60, 201 and on ING001, ING002, ING018.)*
+- [x] A3: functions compile against the foundation schema in TypeDB 3.x.
+- [x] A4: unit math follows C1 exactly (packs × pack-size vs. `requires` amount) —
       verified by hand-computing one item (e.g. Medium Cappuccino) end-to-end.
-- [ ] A5: the write-up delivers §5-style sentences with real numbers.
-- [ ] User has explicitly approved: D1.1 (parameterized threshold, default 20
-      servings) and D1.2 (exposure = observed 6-day revenue, no forecasting).
+      *(423.08 servings, milk-limited; £72.45.)*
+- [x] A5: the write-up delivers §5-style sentences with real numbers.
+- [x] User has explicitly approved: D1.1 (parameterized threshold, default 50
+      servings; revised from 20 on 2026-11-23) and D1.2 (exposure = observed
+      6-day revenue, no forecasting).
 
 ## 7. Template notes
 

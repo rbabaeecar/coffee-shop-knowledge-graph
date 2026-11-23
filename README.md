@@ -19,6 +19,8 @@ The project is also meant as a reusable template. The `inventory-item → menu-i
 | `specs/01-stock-out.md` | Scenario spec: stock-out impact tracing |
 | `specs/02-restocking.md` | Scenario spec: demand-driven restocking |
 | `specs/03-staffing.md` | Scenario spec: staffing vs. demand |
+| `functions/` | Schema-level TypeQL functions, one file per scenario spec |
+| `queries/` | Scenario queries, one folder per scenario spec |
 | `out/` | Generated TypeQL data files, ready to load |
 | `scripts/` | Placeholder for data-preparation scripts |
 
@@ -94,7 +96,19 @@ Commit, then check the counts against the table above, e.g.:
 match $o isa order; reduce $count = count;
 ```
 
-### 4. (Optional) Regenerate the TypeQL from the CSVs
+### 4. Run a scenario
+
+**Stock-out impact (spec 01).** Open a **schema** transaction, run
+`functions/01-stock-out.tql`, and commit. Then, in a **read** transaction, run:
+
+- `queries/01-stock-out/q1-alert.tql`: items that can make fewer than N more
+  servings from current stock (default N = 50), with revenue and the
+  limiting ingredient. Change N on the line marked `# <-- N`.
+- `queries/01-stock-out/q2-what-if.tql`: the items that become unsellable
+  if one ingredient runs out, with the revenue exposed. Change the ingredient
+  on the line marked `# <-- ingredient`.
+
+### 5. (Optional) Regenerate the TypeQL from the CSVs
 
 You only need this if you want to change the data or the mapping. The source CSVs are not in this repository.
 
