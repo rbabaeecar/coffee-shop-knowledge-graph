@@ -1,0 +1,25 @@
+# Spec 01 — Q1 Alert view (specs/01-stock-out.md §4)
+#
+# Menu items whose current stock covers fewer than N servings, with the
+# revenue attached to them and the limiting ingredient(s).
+# Requires functions/01-stock-out.tql. Run in a READ transaction.
+#
+# PARAMETER: threshold N in servings. Default 50.0 (D1.1). Change only the
+#            literal on the line marked "<-- N". Keep the decimal point.
+#
+# One row per (item, limiting ingredient). An item with several ingredients
+# tied for the minimum appears once per tied ingredient.
+# Sorted by revenue, highest first: the top row is the most money
+# endangered by the least stock.
+
+match
+  $m isa menu-item, has name $item, has size $size;
+  let $coverage = max_servable($m);
+  $coverage < 50.0;                                 # <-- N
+  let $revenue = item_revenue($m);
+  requires (product: $m, ingredient: $i);
+  $i has name $limiting-ingredient;
+  let $supported = servings_supported($i, $m);
+  $supported == $coverage;
+sort $revenue desc;
+select $item, $size, $coverage, $revenue, $limiting-ingredient;
