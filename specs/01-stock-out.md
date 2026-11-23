@@ -108,15 +108,22 @@ knowledge", not query output.
 
 ## 6. Acceptance criteria
 
-- [ ] A1: Q1 and Q2 are each answered by **one** TypeQL query invoking the
+*(All passed 2026-11-23 on TypeDB 3.13. Implementation:
+`functions/01-stock-out.tql`, `queries/01-stock-out/`. The A5 write-up is
+kept locally and is not tracked in git.)*
+
+- [x] A1: Q1 and Q2 are each answered by **one** TypeQL query invoking the
       §3 functions (no client-side joins or post-processing beyond sorting).
-- [ ] A2: Q1's threshold and Q2's ingredient are the only parameters; changing
+      *(Q2 is a single `fetch` that also returns its totals and the menu size.)*
+- [x] A2: Q1's threshold and Q2's ingredient are the only parameters; changing
       them requires no query edits beyond the value.
-- [ ] A3: functions compile against the foundation schema in TypeDB 3.x.
-- [ ] A4: unit math follows C1 exactly (packs × pack-size vs. `requires` amount) —
+      *(Tested at N = 20, 50, 60, 201 and on ING001, ING002, ING018.)*
+- [x] A3: functions compile against the foundation schema in TypeDB 3.x.
+- [x] A4: unit math follows C1 exactly (packs × pack-size vs. `requires` amount) —
       verified by hand-computing one item (e.g. Medium Cappuccino) end-to-end.
-- [ ] A5: the write-up delivers §5-style sentences with real numbers.
-- [ ] User has explicitly approved: D1.1 (parameterized threshold, default 50
+      *(423.08 servings, milk-limited; £72.45.)*
+- [x] A5: the write-up delivers §5-style sentences with real numbers.
+- [x] User has explicitly approved: D1.1 (parameterized threshold, default 50
       servings; revised from 20 on 2026-11-23) and D1.2 (exposure = observed
       6-day revenue, no forecasting).
 
