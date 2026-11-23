@@ -1,0 +1,40 @@
+# Spec 01 — Stock-Out Impact Tracing: schema-level functions (convention C2)
+# Source of truth: specs/01-stock-out.md §3
+#
+# Load AFTER schema.tql, in a SCHEMA transaction, then commit.
+# All stock math is in base units (convention C1):
+#   stock_units = packs-in-stock × pack-size, compared with requires.amount.
+
+define
+
+# Stock of an inventory item in base units (C1).
+fun stock_units($i: inventory-item) -> double:
+  match
+    $i has packs-in-stock $p, has pack-size $s;
+    let $u = $p * $s;
+  return first $u;
+
+# How many servings of one menu item the current stock of ONE of its
+# ingredients supports: stock_units / amount-per-serving.
+# Raw double, not floored (decided 2026-11-23).
+fun servings_supported($i: inventory-item, $m: menu-item) -> double:
+  match
+    requires (product: $m, ingredient: $i), has amount $a;
+    let $n = stock_units($i) / $a;
+  return first $n;
+
+# Bottleneck coverage for an item: the minimum servings_supported over all
+# of its ingredients. The argmin ingredient is the "limiting ingredient".
+fun max_servable($m: menu-item) -> double:
+  match
+    requires (product: $m, ingredient: $i);
+    let $n = servings_supported($i, $m);
+  return min($n);
+
+# Observed revenue for an item over the 6-trading-day window (C3).
+fun item_revenue($m: menu-item) -> double:
+  match
+    $m has price $p;
+    contains (order: $o, item: $m), has line-quantity $q;
+    let $rev = $p * $q;
+  return sum($rev);
